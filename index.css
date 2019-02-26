@@ -244,8 +244,8 @@ nav{
 }
 
 #nav_logo{
-  height: calc(var(--nav_height) - 20px);
-  padding: 10px 50px 10px 20px;
+  height: var(--nav_height);
+  padding: 10px 20px 10px 10px;
   background-color: white;
   border-radius: 0 50px 50px 0;
 
@@ -305,11 +305,65 @@ nav{
    margin-right: 15px;
  }
 
+ #settings_menu{
+   opacity: 0;
+   background-color: rgba(30,30,30,0.8);
+   display: none;
+   align-items: center;
+   justify-content: center;
+   position: fixed;
+   top: 0;
+   right: 0;
+   width: 100vw;
+   height: 100vh;
+ }
+
+ #settings_window{
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   background-color: white;
+   border-radius: 20px;
+   height: var(--add_module_height);
+   position: relative;
+ }
+
+ #close_settings_window{
+   position: absolute;
+   top: -15px;
+   left: -15px;
+   width: 40px;
+   height: 40px;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   border-radius: 100px;
+   background-color: white;
+   cursor: pointer;
+ }
+
+ #settings_title{
+   display: inline-flex;
+   align-items: center;
+   justify-content: flex-start;
+   padding: 10px 20px 10px 20px;
+   border-radius: 100px;
+   background-color: rgba(0,0,0,0.1);
+   height: var(--input_height);
+ }
+
+ #settings_list{
+   list-style-type: none;
+   padding: 0;
+   margin: 20px;
+ }
+
 /*###################################################*/
 /*ADD MODULE POPUP    ###############################*/
 /*###################################################*/
 
 #add_module_menu{
+  opacity: 0;
   background-color: rgba(30,30,30,0.8);
   display: flex;
   align-items: center;
@@ -328,6 +382,21 @@ nav{
   background-color: white;
   border-radius: 20px;
   height: var(--add_module_height);
+  position: relative;
+}
+
+#close_module_window{
+  position: absolute;
+  top: -15px;
+  left: -15px;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 100px;
+  background-color: white;
+  cursor: pointer;
 }
 
 .add_module_title{

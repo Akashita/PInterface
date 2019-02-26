@@ -5,7 +5,7 @@
     <title></title>
     <link rel="stylesheet" href="index.css">
     <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
-    <script src="index.js"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
   </head>
   <body>
 <!-- Main page -->
@@ -140,7 +140,7 @@
             </li>
           </ul>
         </div>
-        <div id="button_add_module" onclick="add_module()"></div>
+        <div id="button_add_module"></div>
       </main>
       <footer>
         <div id="footer_content">
@@ -156,8 +156,20 @@
               </li>
             </ul>
           <div class="vertical_line"></div>
-            iojo
+            <ul>
+              <li>
+                By Swan Launay
+              </li>
+              <li>
+                akashita@protonmail.com
+              </li>
+            </ul>
           <div class="vertical_line"></div>
+          <ul>
+            <li>
+              In collaboration with Gaby Launay
+            </li>
+          </ul>
         </div>
       </footer>
 
@@ -165,6 +177,9 @@
 <!-- Add module popup -->
     <div id="add_module_menu" style="display: none;">
       <div id="add_module_window">
+       <div id="close_module_window">
+         X
+       </div>
         <ul id="add_module_list">
           <li>
             <div class="add_module_title">Add a module to the main page</div>
@@ -198,7 +213,15 @@
     </div>
 <!-- Settings popup -->
     <div id="settings_menu">
-
+      <div id="settings_window">
+        <div id="close_settings_window">X</div>
+        <ul id="settings_list">
+          <li id="settings_title">
+            Settings
+          </li>
+        </ul>
+      </div>
     </div>
+    <script src="index.js"></script>
   </body>
 </html>
