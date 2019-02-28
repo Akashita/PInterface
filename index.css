@@ -375,7 +375,7 @@ nav{
   height: 100vh;
 }
 
-#add_module_window{
+#add_module_form{
   display: flex;
   align-items: center;
   justify-content: center;
@@ -515,6 +515,11 @@ footer{
 /*###################################################*/
 /*INPUT    ##########################################*/
 /*###################################################*/
+
+input[type=submit]{
+  display: inline-block;
+  border: none;
+}
 
 input[type="text"]{
   height: var(--input_height);
