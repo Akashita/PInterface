@@ -8,16 +8,23 @@ foreach ($arg_list as $arg) {
     $module[] = $_POST[$arg];
   }
   else{
-    $module[] = "undifined";
+    $module[] = "undefined";
   }
 }
 
-$file = fopen('data/modules.csv', 'a');
-fprintf($file, chr(0xEF).chr(0xBB).chr(0xBF));
-$file_content[] = $module;
-foreach ($file_content as $module_content) {
-  fputcsv($file, $module_content);
+$file_id = fopen('data/modules.csv', 'r+');
+$id = 0;
+while(!feof($file_id)) {
+  fgetcsv($file_id); //Changement de ligne
+  $id++;
 }
+
+fclose($file_id);
+
+
+$file = fopen('data/modules.csv', 'a+');
+array_unshift($module,$id);
+fputcsv($file, $module);
 fclose($file);
 //echo() si on veut renvoyer une erreur
  ?>

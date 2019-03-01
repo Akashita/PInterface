@@ -6,9 +6,9 @@
     <link rel="stylesheet" href="index.css">
     <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
-    <script src="add_module.js"></script>
   </head>
   <body>
+    <script src="module.js"></script>
 <!-- Main page -->
     <div id="main_page"> <!-- Ajouter ici tout le contenu de la page, désactiver le blur par défaut -->
       <nav>
@@ -99,44 +99,89 @@
 
     </div>
 <!-- Add module popup -->
-    <div id="add_module_menu" style="display: none;">
+    <div id="add_module_menu" class="pop_module_menu" style="display: none;">
       <div>
-       <form method="post" id="add_module_form">
-         <div id="close_module_window" onclick="add_mod_off()">
+       <form method="post" id="add_module_form" class="pop_module_form">
+         <div id="close_module_window" class="pop_module_window" onclick="add_mod_off()">
            X
          </div>
-          <ul id="add_module_list">
+          <ul id="add_module_list" class="pop_module_list">
             <li>
-              <div class="add_module_title">Add a module to the main page</div>
+              <div class="pop_module_title">Add a module to the main page</div>
             </li>
             <li>
-              <input type="text" placeholder="Module name" id="add_module_name" />
+              <input type="text" placeholder="Module name" id="add_module_name" class="pop_module_name"/>
             </li>
             <li>
-              <input type="text" placeholder="Description" id="add_module_description" />
+              <input type="text" placeholder="Description" id="add_module_description" class="pop_module_description"/>
             </li>
             <li>
-              <input type="text" placeholder="Enter a command" id="add_module_command" />
+              <input type="text" placeholder="Enter a command" id="add_module_command" class="pop_module_command"/>
             </li>
             <li>
-              <div class="add_module_title">
+              <div class="pop_module_title">
                 Enable parameter input
               </div>
-              <input type="checkbox" id="add_module_parameter" value="true" class="switch" />
+              <input type="checkbox" id="add_module_parameter" value="true" class="switch" class="pop_module_parameter"/>
             </li>
             <li>
-              <div class="add_module_title">
+              <div class="pop_module_title">
                 Choose the module color
               </div>
-              <div id="add_module_select_color_container">
-                <input type="color" id="add_module_select_color" />
+              <div id="add_module_select_color_container" class="pop_module_select_color_container">
+                <input type="color" id="add_module_select_color" class="pop_module_select_color"/>
               </div>
             </li>
           </ul>
-          <input type="submit" id="add_module_submit" value=""></div>
+          <div id="add_module_submit" class="pop_module_submit" value="" onclick="add_module()"></div>
         </form>
       </div>
     </div>
+
+
+
+    <!-- modify module popup -->
+        <div id="modify_module_menu" class="pop_module_menu" style="display: none;">
+          <div>
+           <form method="post" id="modify_module_form" class="pop_module_form">
+             <div id="modify_module_window" class="pop_module_window" onclick="modify_mod_off()">
+               X
+             </div>
+              <ul id="modify_module_list" class="pop_module_list">
+                <li>
+                  <div class="modify_module_title" class="pop_module_title">Modify a module in the main page</div>
+                </li>
+                <li>
+                  <input type="text" placeholder="Module name" id="modify_module_name" class="pop_module_name"/>
+                </li>
+                <li>
+                  <input type="text" placeholder="Description" id="modify_module_description" class="pop_module_description"/>
+                </li>
+                <li>
+                  <input type="text" placeholder="Enter a command" id="modify_module_command" class="pop_module_command"/>
+                </li>
+                <li>
+                  <div class="modify_module_title" class="pop_module_title">
+                    Enable parameter input
+                  </div>
+                  <input type="checkbox" id="modify_module_parameter" class="pop_module_parameter switch" value="true" />
+                </li>
+                <li>
+                  <div class="modify_module_title" class="pop_module_title">
+                    Choose the module color
+                  </div>
+                  <div id="modify_module_select_color_container" class="pop_module_select_color_container">
+                    <input type="color" id="modify_module_select_color" class="pop_module_select_color"/>
+                  </div>
+                </li>
+              </ul>
+              <div id="modify_module_submit" class="pop_module_submit" value=""></div>
+            </form>
+          </div>
+        </div>
+
+
+
 <!-- Settings popup -->
     <div id="settings_menu">
       <div id="settings_window">

@@ -316,6 +316,7 @@ nav{
    right: 0;
    width: 100vw;
    height: 100vh;
+   z-index: 200;
  }
 
  #settings_window{
@@ -362,7 +363,7 @@ nav{
 /*ADD MODULE POPUP    ###############################*/
 /*###################################################*/
 
-#add_module_menu{
+.pop_module_menu{
   opacity: 0;
   background-color: rgba(30,30,30,0.8);
   display: flex;
@@ -373,9 +374,10 @@ nav{
   right: 0;
   width: 100vw;
   height: 100vh;
+  z-index: 199;
 }
 
-#add_module_form{
+.pop_module_form{
   display: flex;
   align-items: center;
   justify-content: center;
@@ -385,7 +387,7 @@ nav{
   position: relative;
 }
 
-#close_module_window{
+.pop_module_window{
   position: absolute;
   top: -15px;
   left: -15px;
@@ -399,7 +401,7 @@ nav{
   cursor: pointer;
 }
 
-.add_module_title{
+.pop_module_title{
   display: inline-flex;
   align-items: center;
   justify-content: flex-start;
@@ -409,7 +411,7 @@ nav{
   height: var(--input_height);
 }
 
-#add_module_select_color{
+.pop_module_select_color{
   border: none;
   border-radius: 100px;
   position: absolute;
@@ -420,7 +422,7 @@ nav{
 
 }
 
-#add_module_select_color_container{
+.pop_module_select_color_container{
   border-radius: 100px;
   position: relative;
   overflow: hidden;
@@ -429,7 +431,7 @@ nav{
   margin-left: 20px;
 }
 
-#add_module_submit{
+.pop_module_submit{
   height: var(--add_module_height);
   min-width: 100px;
   background-color: rgb(50,50,50,0.1);
@@ -442,16 +444,12 @@ nav{
   cursor: pointer;
 }
 
-#add_module_submit:hover{
+.pop_module_submit:hover{
   background-color: rgb(50,50,50,0.3);
   transition: 0.5s all ease-out;
 }
 
-
-#add_module_name{
-}
-
-#add_module_command{
+.pop_module_command{
   padding-left: 40px;
   background-image: url(img/arrow.png);
   background-repeat: no-repeat;
@@ -461,16 +459,16 @@ nav{
   transition: 1s all ease-out;
 }
 
-#add_module_command:focus{
+.pop_module_command:focus{
   transition: 0.5s all ease-out;
   width: calc(var(--input_width) + 150px);
 }
 
-#add_module_parameter{
+.pop_module_parameter{
   margin-left: 20px;
 }
 
-#add_module_list{
+.pop_module_list{
   list-style-type:none;
   padding: 0;
   margin: 20px;

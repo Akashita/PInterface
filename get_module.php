@@ -1,6 +1,5 @@
 <?php
   $file = fopen('data/modules.csv', 'r');
-  fprintf($file, chr(0xEF).chr(0xBB).chr(0xBF)); //Format corection error for excel
   $file_content = array();
 
   while(! feof($file)){
@@ -14,10 +13,10 @@
      <div class="more_button">
        <div class="action_popup">
          <div class="actions">
-           <div class="action_modify action_common">
+           <div class="action_modify action_common" onclick="modify_mod_on(<?php echo($module[0]); ?>)">
              Modify
            </div>
-           <div class="action_delete action_common">
+           <div class="action_delete action_common" onclick="delete_module(<?php echo($module[0]); ?>)">
              Delete
            </div>
          </div>
@@ -28,17 +27,17 @@
      </div>
      <div class="black_blur"></div>
      <div class="module_title">
-<?php echo($module[0]); ?>
+<?php echo($module[1]); ?>
      </div>
      <div class="module_description">
-<?php echo($module[1]); ?>
+<?php echo($module[2]); ?>
      </div>
      <ul>
        <li>
          <input type="button" name="Execute" value="Execute" />
        </li>
 <?php
-if($module[3] == "true"){ ?>
+if($module[4] == "true"){ ?>
        <li>
          <input type="text" placeholder="Parameter" />
        </li>
