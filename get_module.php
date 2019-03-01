@@ -9,14 +9,14 @@
     foreach ($file_content as $module) {
       if(!empty($module)){
 ?>
-   <div class="module">
+   <div class="module" id="<?php echo($module[0]); ?>">
      <div class="more_button">
        <div class="action_popup">
          <div class="actions">
-           <div class="action_modify action_common" onclick="modify_mod_on(<?php echo($module[0]); ?>)">
+           <div class="action_modify action_common">
              Modify
            </div>
-           <div class="action_delete action_common" onclick="delete_module(<?php echo($module[0]); ?>)">
+           <div class="action_delete action_common">
              Delete
            </div>
          </div>
@@ -47,4 +47,4 @@ if($module[4] == "true"){ ?>
 
 <?php }} ?>
 
-<div id="button_add_module" onclick="add_mod_on()"></div>
+<div id="button_add_module"></div>

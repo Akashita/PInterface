@@ -581,3 +581,75 @@ input[type="checkbox"].switch{
   input[type="checkbox"].switch:checked:after{
 	left: calc(100% - var(--input_height));
   }
+
+  #loader {
+  z-index           : 300;
+  display           : flex;
+  display           : -ms-flexbox;
+  display           : -webkit-box;
+  -webkit-box-align : center;
+  -webkit-box-pack  : center;
+  position          : fixed;
+  top               : 0;
+  right             : 0;
+  width             : 100vw;
+  height            : 100vh;
+  background-color  : rgb(40,40,40);
+  align-items       : center;
+  -ms-flex-align    : center;
+  -ms-flex-pack     : center;
+  justify-content   : center;
+  opacity: 1;
+}
+
+#wheel {
+  z-index             : 100;
+  display             : inline-block;
+  position            : relative;
+  width               : 70px;
+  height              : 70px;
+  border              : 6px solid transparent;
+  border-top-color    : rgb(230,230,230);
+  border-bottom-color : rgb(230,230,230);
+  border-radius       : 50px;
+  -webkit-animation   : spin 2s linear infinite;
+  animation           : spin 2s linear infinite;
+}
+
+#wheel:after {
+  content           : "";
+  position          : absolute;
+  top               : 5px;
+  right             : 5px;
+  bottom            : 5px;
+  left              : 5px;
+  border            : 6px solid transparent;
+  border-top-color  : rgb(160,160,160);
+  border-radius     : 50px;
+  -webkit-animation : spin 1.5s linear 0s infinite;
+  animation         : spin 1.5s linear 0s infinite;
+}
+
+@-webkit-keyframes spin {
+  0% {
+    -webkit-transform : rotate(0deg);
+    transform         : rotate(0deg);
+  }
+
+  100% {
+    -webkit-transform : rotate(360deg);
+    transform         : rotate(360deg);
+  }
+}
+
+@keyframes spin {
+  0% {
+    -webkit-transform : rotate(0deg);
+    transform         : rotate(0deg);
+  }
+
+  100% {
+    -webkit-transform : rotate(360deg);
+    transform         : rotate(360deg);
+  }
+}

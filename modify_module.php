@@ -23,6 +23,8 @@ $file = fopen('data/modules.csv', 'r+');
   foreach ($file_content as $module) {
     if($module[0] != $id){
       $new_file_content[] = $module;
+    } else{
+      $new_file_content = array();
     }
   }
 

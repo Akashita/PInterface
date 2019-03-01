@@ -6,9 +6,10 @@
     <link rel="stylesheet" href="index.css">
     <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
+    <script src="index.js"></script>
   </head>
   <body>
-    <script src="module.js"></script>
+
 <!-- Main page -->
     <div id="main_page"> <!-- Ajouter ici tout le contenu de la page, désactiver le blur par défaut -->
       <nav>
@@ -22,7 +23,7 @@
           </div>
         </div>
         <div id="settings_buttons">
-          <div id="goto_settings_buttons" onclick="settings_on()">
+          <div id="goto_settings_buttons">
             <img id="goto_settings_logo" src="img/settings.png" alt="settings" />
             SETTINGS
           </div>
@@ -102,7 +103,7 @@
     <div id="add_module_menu" class="pop_module_menu" style="display: none;">
       <div>
        <form method="post" id="add_module_form" class="pop_module_form">
-         <div id="close_module_window" class="pop_module_window" onclick="add_mod_off()">
+         <div id="close_module_window" class="pop_module_window">
            X
          </div>
           <ul id="add_module_list" class="pop_module_list">
@@ -133,7 +134,7 @@
               </div>
             </li>
           </ul>
-          <div id="add_module_submit" class="pop_module_submit" value="" onclick="add_module()"></div>
+          <div id="add_module_submit" class="pop_module_submit" value=""></div>
         </form>
       </div>
     </div>
@@ -144,7 +145,7 @@
         <div id="modify_module_menu" class="pop_module_menu" style="display: none;">
           <div>
            <form method="post" id="modify_module_form" class="pop_module_form">
-             <div id="modify_module_window" class="pop_module_window" onclick="modify_mod_off()">
+             <div id="modify_module_window" class="pop_module_window" >
                X
              </div>
               <ul id="modify_module_list" class="pop_module_list">
@@ -164,7 +165,7 @@
                   <div class="modify_module_title" class="pop_module_title">
                     Enable parameter input
                   </div>
-                  <input type="checkbox" id="modify_module_parameter" class="pop_module_parameter switch" value="true" />
+                  <input type="checkbox" id="modify_module_parameter" class="pop_module_parameter switch"/>
                 </li>
                 <li>
                   <div class="modify_module_title" class="pop_module_title">
@@ -185,7 +186,7 @@
 <!-- Settings popup -->
     <div id="settings_menu">
       <div id="settings_window">
-        <div id="close_settings_window" onclick="settings_off()">X</div>
+        <div id="close_settings_window">X</div>
         <ul id="settings_list">
           <li id="settings_title">
             Settings
@@ -193,6 +194,8 @@
         </ul>
       </div>
     </div>
-    <script src="index.js"></script>
+    <div id="loader">
+      <div id="wheel">
+    </div>
   </body>
 </html>
