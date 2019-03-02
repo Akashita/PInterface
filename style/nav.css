@@ -1,0 +1,132 @@
+:root {
+ --add_module_height: 400px;
+ --custom_color: rgb(0,100,255);
+ --input_height: 30px;
+ --input_width: 200px;
+
+ --dark_color: #2f3542;
+ --light_color:#57606f;
+
+
+ --nav_height: 50px;
+
+ --footer_height: 200px;
+}
+
+nav{
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  height: var(--nav_height);
+  background-color: var(--dark_color);
+  border-bottom: 5px solid rgba(0,0,0,0.1);
+  overflow: hidden;
+  color: white;
+}
+
+#nav_buttons{
+  height: 100%;
+  width: auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  display: relative;
+}
+
+#nav_logo{
+  height: var(--nav_height);
+  padding: 10px 20px 10px 10px;
+  background-color: white;
+  border-radius: 0 50px 50px 0;
+
+}
+
+.nav_button{
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  height: calc(100% - 20px);
+  padding: 10px 20px 10px 20px;
+  border-right: 1px solid rgba(255,255,255,0.1);
+  cursor: pointer;
+}
+
+.nav_button:hover{
+  background-color: rgba(0,0,0,0.1);
+}
+
+#settings_buttons{
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  position: relative;
+  color: black;
+}
+
+#goto_settings_buttons{
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  position: absolute;
+  padding: 0 10px 0 10px;
+  right: -100px;
+  width: 140px;
+  height: var(--nav_height);
+  border-radius: 50px 0 0 50px;
+  cursor: pointer;
+  background-color: white;
+  -webkit-transition: 0.4s all ease-out;
+  transition: 0.4s all ease-out;
+}
+
+#goto_settings_buttons:hover{
+  -webkit-transition: 0.2s all ease-out;
+  transition: 0.2s all ease-out;
+  right: 0;
+}
+
+#goto_settings_buttons:hover #goto_settings_logo{
+  -webkit-transition: 0.4s all ease-out;
+  transition: 0.4s all ease-out;
+  -webkit-transform: rotate(-90deg);
+          transform: rotate(-90deg);
+}
+
+ #goto_settings_logo{
+   -webkit-transition: 0.4s all ease-out;
+   transition: 0.4s all ease-out;
+   -webkit-transform: rotate(0deg);
+           transform: rotate(0deg);
+   height: calc(var(--nav_height) - 10px);
+   margin-right: 15px;
+ }

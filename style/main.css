@@ -1,7 +1,7 @@
 body{
   padding: 0;
   margin: 0;
-  background-image: url(img/back.png);
+  background-image: url(../img/back.png);
   background-attachment: fixed;
   font-family: 'Raleway', sans-serif;
 }
@@ -22,31 +22,43 @@ body{
 }
 
 
-
-/*###################################################*/
-/*    MAIN PAGE   ###################################*/
-/*###################################################*/
-
-#main_page{
-  /*filter: blur(3px);*/
-}
-
 main{
   padding: 40px 0 40px 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-wrap: wrap;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
   min-height: calc(100vh - var(--footer_height) - var(--nav_height) - 90px);
 }
+
+
+/*###################################################*/
+/*    MODULES  ######################################*/
+/*###################################################*/
 
 .module{
   background-color: rgba(255,255,255,0.3);
   padding: 10px;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
   position: relative;
 }
 
@@ -70,26 +82,34 @@ main{
 .more_button:hover .more_2{
   right: 10px;
   opacity: 0;
+  -webkit-transition: 0.2s all linear;
   transition: 0.2s all linear;
-  transition-delay: 0.3s;
+  -webkit-transition-delay: 0.3s;
+          transition-delay: 0.3s;
 }
 
 .more_button:hover .more_1{
-  transform: rotate(45deg);
+  -webkit-transform: rotate(45deg);
+          transform: rotate(45deg);
   width: 21px;
   left: 4px;
   top: 13px;
+  -webkit-transition: 0.2s all linear;
   transition: 0.2s all linear;
-  transition-delay: 0.3s;
+  -webkit-transition-delay: 0.3s;
+          transition-delay: 0.3s;
 }
 
 .more_button:hover .more_3{
-  transform: rotate(-45deg);
+  -webkit-transform: rotate(-45deg);
+          transform: rotate(-45deg);
   width: 21px;
   top: 13px;
   left: 4px;
+  -webkit-transition: 0.2s all linear;
   transition: 0.2s all linear;
-  transition-delay: 0.3s;
+  -webkit-transition-delay: 0.3s;
+          transition-delay: 0.3s;
 }
 
 .more_button_common{
@@ -97,13 +117,16 @@ main{
   width: 16px;
   border-bottom: 2px solid rgba(0,0,0,0.4);
   margin-bottom: 5px;
+  -webkit-transition: 0.2s all linear;
   transition: 0.2s all linear;
   z-index: 101;
 }
 
 .more_1{
-  transform: rotate(0deg);
-  transform-origin: center;
+  -webkit-transform: rotate(0deg);
+          transform: rotate(0deg);
+  -webkit-transform-origin: center;
+          transform-origin: center;
   top: 6px;
   left: 6px;
 }
@@ -115,8 +138,10 @@ main{
 }
 
 .more_3{
-  transform: rotate(0deg);
-  transform-origin: center;
+  -webkit-transform: rotate(0deg);
+          transform: rotate(0deg);
+  -webkit-transform-origin: center;
+          transform-origin: center;
   top: 20px;
   left: 6px;
 }
@@ -130,15 +155,19 @@ main{
   height: 0;
   top: -5px;
   right: -5px;
-  box-shadow: 0 0 15px black;
+  -webkit-box-shadow: 0 0 15px black;
+          box-shadow: 0 0 15px black;
+  -webkit-transition: 0.1s all ease-out;
   transition: 0.1s all ease-out;
   z-index: 101;
 }
 
 .more_button:hover .action_popup{
   height: 100px;
+  -webkit-transition: 0.3s all ease-out;
   transition: 0.3s all ease-out;
-  transition-delay: 0.3s;
+  -webkit-transition-delay: 0.3s;
+          transition-delay: 0.3s;
 
 }
 
@@ -148,9 +177,15 @@ main{
 }
 
 .action_common{
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  align-items: center;
-  justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   height: 30px;
   padding: 10px;
   cursor: pointer;
@@ -158,33 +193,26 @@ main{
 
 .action_modify{
   border-bottom: 1px solid rgba(0,0,0,0.1);
+  -webkit-transition: 0.4s all ease-out;
   transition: 0.4s all ease-out;
 }
 
 .action_modify:hover{
     background-color: rgba(0,0,0,0.2);
+    -webkit-transition: 0.4s all ease-out;
     transition: 0.4s all ease-out;
 }
 
 .action_delete{
   background-color: none;
+  -webkit-transition: 0.4s all ease-out;
   transition: 0.4s all ease-out;
 }
 
 .action_delete:hover{
   background-color: #e55039;
+  -webkit-transition: 0.4s all ease-out;
   transition: 0.4s all ease-out;
-}
-
-.black_blur{
-  position: fixed;
-  top: 0;
-  left: 0;
-  opacity: 0;
-  background-color: rgba(0,0,0,0.6);
-  transition: 0.3s all ease-out;
-  transition-delay: 0.3s;
-  z-index: 99;
 }
 
 .more_button:hover + div{
@@ -194,9 +222,15 @@ main{
 }
 
 .module_title{
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
   display: inline-flex;
-  align-items: center;
-  justify-content: flex-start;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
   padding: 10px 20px 10px 20px;
   margin: 0 30px 0 30px;
   border-radius: 100px;
@@ -214,6 +248,28 @@ main{
   text-align: center;
 }
 
+.black_blur{
+  position: fixed;
+  top: 0;
+  left: 0;
+  opacity: 0;
+  background-color: rgba(0,0,0,0.6);
+  -webkit-transition: 0.3s all ease-out;
+  transition: 0.3s all ease-out;
+  -webkit-transition-delay: 0.3s;
+          transition-delay: 0.3s;
+  z-index: 99;
+}
+/*|___________________________________________________|*/
+
+
+
+
+
+/*###################################################*/
+/*  ADD MODULES BUTTON  #############################*/
+/*###################################################*/
+
 #button_add_module{
   width: 100px;
   height: 100px;
@@ -222,7 +278,7 @@ main{
   margin: 20px;
   border-bottom: 4px solid rgba(0,0,0,0.2);
   border-left: 5px solid rgba(0,0,0,0.2);
-  background-image: url(img/croix.png);
+  background-image: url(../img/croix.png);
   background-size: 50px;
   background-position: center;
   background-repeat: no-repeat;
@@ -230,98 +286,30 @@ main{
 }
 
 #button_add_module:hover{
+  -webkit-transition: 0.1s all linear;
   transition: 0.1s all linear;
   background-size: 60px;
 }
+/*|___________________________________________________|*/
 
-nav{
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  height: var(--nav_height);
-  background-color: var(--dark_color);
-  border-bottom: 5px solid rgba(0,0,0,0.1);
-  overflow: hidden;
-  color: white;
-}
 
-#nav_buttons{
-  height: 100%;
-  width: auto;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  display: relative;
-}
 
-#nav_logo{
-  height: var(--nav_height);
-  padding: 10px 20px 10px 10px;
-  background-color: white;
-  border-radius: 0 50px 50px 0;
 
-}
 
-.nav_button{
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  height: calc(100% - 20px);
-  padding: 10px 20px 10px 20px;
-  border-right: 1px solid rgba(255,255,255,0.1);
-  cursor: pointer;
-}
-
-.nav_button:hover{
-  background-color: rgba(0,0,0,0.1);
-}
-
-#settings_buttons{
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  position: relative;
-  color: black;
-}
-
-#goto_settings_buttons{
-  display: flex;
-  align-items: center;
-  justify-content: flex-start;
-  position: absolute;
-  padding: 0 10px 0 10px;
-  right: -100px;
-  width: 140px;
-  height: var(--nav_height);
-  border-radius: 50px 0 0 50px;
-  cursor: pointer;
-  background-color: white;
-  transition: 0.4s all ease-out;
-}
-
-#goto_settings_buttons:hover{
-  transition: 0.2s all ease-out;
-  right: 0;
-}
-
-#goto_settings_buttons:hover #goto_settings_logo{
-  transition: 0.4s all ease-out;
-  transform: rotate(-90deg);
-}
-
- #goto_settings_logo{
-   transition: 0.4s all ease-out;
-   transform: rotate(0deg);
-   height: calc(var(--nav_height) - 10px);
-   margin-right: 15px;
- }
+/*###################################################*/
+/*    SETTINGS POPUP  ###############################*/
+/*###################################################*/
 
  #settings_menu{
    opacity: 0;
    background-color: rgba(30,30,30,0.8);
    display: none;
-   align-items: center;
-   justify-content: center;
+   -webkit-box-align: center;
+       -ms-flex-align: center;
+           align-items: center;
+   -webkit-box-pack: center;
+       -ms-flex-pack: center;
+           justify-content: center;
    position: fixed;
    top: 0;
    right: 0;
@@ -331,9 +319,15 @@ nav{
  }
 
  #settings_window{
+   display: -webkit-box;
+   display: -ms-flexbox;
    display: flex;
-   align-items: center;
-   justify-content: center;
+   -webkit-box-align: center;
+       -ms-flex-align: center;
+           align-items: center;
+   -webkit-box-pack: center;
+       -ms-flex-pack: center;
+           justify-content: center;
    background-color: white;
    border-radius: 20px;
    height: var(--add_module_height);
@@ -346,18 +340,30 @@ nav{
    left: -15px;
    width: 40px;
    height: 40px;
+   display: -webkit-box;
+   display: -ms-flexbox;
    display: flex;
-   align-items: center;
-   justify-content: center;
+   -webkit-box-align: center;
+       -ms-flex-align: center;
+           align-items: center;
+   -webkit-box-pack: center;
+       -ms-flex-pack: center;
+           justify-content: center;
    border-radius: 100px;
    background-color: white;
    cursor: pointer;
  }
 
  #settings_title{
+   display: -webkit-inline-box;
+   display: -ms-inline-flexbox;
    display: inline-flex;
-   align-items: center;
-   justify-content: flex-start;
+   -webkit-box-align: center;
+       -ms-flex-align: center;
+           align-items: center;
+   -webkit-box-pack: start;
+       -ms-flex-pack: start;
+           justify-content: flex-start;
    padding: 10px 20px 10px 20px;
    border-radius: 100px;
    background-color: rgba(0,0,0,0.1);
@@ -369,6 +375,10 @@ nav{
    padding: 0;
    margin: 20px;
  }
+ /*|___________________________________________________|*/
+
+
+
 
 /*###################################################*/
 /*ADD MODULE POPUP    ###############################*/
@@ -377,9 +387,15 @@ nav{
 .pop_module_menu{
   opacity: 0;
   background-color: rgba(30,30,30,0.8);
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  align-items: center;
-  justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   position: fixed;
   top: 0;
   right: 0;
@@ -389,9 +405,15 @@ nav{
 }
 
 .pop_module_form{
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  align-items: center;
-  justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   background-color: white;
   border-radius: 20px;
   height: var(--add_module_height);
@@ -404,18 +426,30 @@ nav{
   left: -15px;
   width: 40px;
   height: 40px;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  align-items: center;
-  justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   border-radius: 100px;
   background-color: white;
   cursor: pointer;
 }
 
 .pop_module_title{
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
   display: inline-flex;
-  align-items: center;
-  justify-content: flex-start;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
   padding: 10px 20px 10px 20px;
   border-radius: 100px;
   background-color: rgba(0,0,0,0.1);
@@ -429,8 +463,6 @@ nav{
 .pop_module_name{
   padding: 10px;
 }
-
-
 
 .pop_module_select_color{
   border: none;
@@ -457,31 +489,35 @@ nav{
   min-width: 100px;
   background-color: rgb(50,50,50,0.1);
   border-radius: 0 20px 20px 0;
-  background-image: url(img/arrow.png);
+  background-image: url(../img/arrow.png);
   background-repeat: no-repeat;
   background-position: center;
   background-size: 75px;
+  -webkit-transition: 0.5s all ease-out;
   transition: 0.5s all ease-out;
   cursor: pointer;
 }
 
 .pop_module_submit:hover{
   background-color: rgb(50,50,50,0.3);
+  -webkit-transition: 0.5s all ease-out;
   transition: 0.5s all ease-out;
 }
 
 .pop_module_command{
   padding: 10px 10px 10px 35px;
-  background-image: url(img/arrow.png);
+  background-image: url(../img/arrow.png);
   background-repeat: no-repeat;
   background-position: 10px;
   background-size: 20px;
   width: calc(var(--input_width) - 35px);
+  -webkit-transition: 1s all ease-out;
   transition: 1s all ease-out;
 }
 
 
 .pop_module_command:focus{
+  -webkit-transition: 0.5s all ease-out;
   transition: 0.5s all ease-out;
   width: calc(var(--input_width) + 150px);
 }
@@ -495,11 +531,24 @@ nav{
   padding: 0;
   margin: 20px;
 }
+/*|___________________________________________________|*/
+
+
+
+/*###################################################*/
+/*LIST     ##########################################*/
+/*###################################################*/
 
 li{
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  align-items: center;
-  justify-content: flex-start;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
   margin: 10px 0 10px 0;
 }
 
@@ -507,29 +556,9 @@ ul{
   margin: 0;
   padding: 0;
 }
+/*|___________________________________________________|*/
 
-footer{
-  height: var(--footer_height);
-  background-color: var(--dark_color);
-  border-top: 5px solid rgba(0,0,0,0.1);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: rgb(200,200,200);
 
-}
-
-#footer_content{
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.vertical_line{
-  height: 100px;
-  border-left: 2px solid rgb(130,130,130);
-  margin: 0 30px 0 30px;
-}
 
 
 /*###################################################*/
@@ -605,29 +634,18 @@ input[type="checkbox"].switch{
   input[type="checkbox"].switch:checked:after{
 	left: calc(100% - var(--input_height));
   }
+/*|___________________________________________________|*/
 
-#loader_info{
-  animation-delay: 2s;
-  animation-name: loaderinfo;
-  animation-duration: 0.5s;
-  color: rgba(0,0,0,0);
-  -webkit-animation-fill-mode: forwards;
-  font-size: 1.3em;
-  margin: 100px;
-}
 
-@keyframes loaderinfo {
-  from {
-    color: rgba(0, 0, 0, 0);
-  }
 
-  to {
-    color: rgba(200,200,200,1);
-  }
-}
+/*###################################################*/
+/*LOADER    #########################################*/
+/*###################################################*/
 
   #loader {
   z-index           : 300;
+  display           : -webkit-box;
+  display           : -ms-flexbox;
   display           : flex;
   position          : fixed;
   top               : 0;
@@ -635,9 +653,16 @@ input[type="checkbox"].switch{
   width             : 100vw;
   height            : 100vh;
   background-color  : rgb(40,40,40);
-  align-items       : center;
-  justify-content   : center;
-  flex-direction    : column;
+  -webkit-box-align       : center;
+      -ms-flex-align       : center;
+          align-items       : center;
+  -webkit-box-pack   : center;
+      -ms-flex-pack   : center;
+          justify-content   : center;
+  -webkit-box-orient    : vertical;
+  -webkit-box-direction    : normal;
+      -ms-flex-direction    : column;
+          flex-direction    : column;
   opacity           : 1;
 }
 
@@ -669,6 +694,39 @@ input[type="checkbox"].switch{
   animation         : spin 1.5s linear 0s infinite;
 }
 
+#loader_info{
+  -webkit-animation-delay: 2s;
+          animation-delay: 2s;
+  -webkit-animation-name: loaderinfo;
+          animation-name: loaderinfo;
+  -webkit-animation-duration: 0.5s;
+          animation-duration: 0.5s;
+  color: rgba(0,0,0,0);
+  -webkit-animation-fill-mode: forwards;
+  font-size: 1.3em;
+  margin: 100px;
+}
+
+@-webkit-keyframes loaderinfo {
+  from {
+    color: rgba(0, 0, 0, 0);
+  }
+
+  to {
+    color: rgba(200,200,200,1);
+  }
+}
+
+@keyframes loaderinfo {
+  from {
+    color: rgba(0, 0, 0, 0);
+  }
+
+  to {
+    color: rgba(200,200,200,1);
+  }
+}
+
 @-webkit-keyframes spin {
   0% {
     -webkit-transform : rotate(0deg);
@@ -692,10 +750,21 @@ input[type="checkbox"].switch{
     transform         : rotate(360deg);
   }
 }
+/*|___________________________________________________|*/
+
+
+
+
+/*###################################################*/
+/*MEDIA QUERY  ######################################*/
+/*###################################################*/
 
 @media only screen and (max-width: 980px) {
  #footer_content {
-   flex-direction: column;
+   -webkit-box-orient: vertical;
+   -webkit-box-direction: normal;
+       -ms-flex-direction: column;
+           flex-direction: column;
  }
  footer{
    height: auto;
@@ -708,3 +777,4 @@ input[type="checkbox"].switch{
    margin: 30px 0 30px 0;
  }
 }
+/*|___________________________________________________|*/
