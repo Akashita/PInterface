@@ -12,6 +12,8 @@ function verify_post($arg){
 
 $id = verify_post("id");
 
+echo($id);
+
 $database->exec("DELETE FROM modules WHERE id=$id");
 
 ?>

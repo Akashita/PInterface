@@ -108,7 +108,7 @@
         </div>
         <ul id="modify_module_list" class="pop_module_list">
           <li>
-            <div class="modify_module_title" class="pop_module_title">Modify a module in the main page</div>
+            <div class="pop_module_title" class="pop_module_title">Modify a module in the main page</div>
           </li>
           <li>
             <input type="text" placeholder="Module name" id="modify_module_name" class="pop_module_name"/>
@@ -120,13 +120,13 @@
             <input type="text" placeholder="Enter a command" id="modify_module_command" class="pop_module_command"/>
           </li>
           <li>
-            <div class="modify_module_title" class="pop_module_title">
+            <div class="pop_module_title" class="pop_module_title">
               Enable parameter input
             </div>
             <input type="checkbox" id="modify_module_parameter" class="pop_module_parameter switch"/>
           </li>
           <li>
-            <div class="modify_module_title" class="pop_module_title">
+            <div class="pop_module_title" class="pop_module_title">
               Choose the module color
             </div>
             <div id="modify_module_select_color_container" class="pop_module_select_color_container">

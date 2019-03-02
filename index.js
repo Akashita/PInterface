@@ -63,11 +63,9 @@ $(document).ready(function(){
       $("#add_module_name").val('');
       $("#add_module_description").val('');
       $("#add_module_command").val('');
-      $("#add_module_parameter").val('');
-      $("#add_module_select_color").val('');
+      $("#add_module_select_color").val('#FFFFFF');
       get_module(); //Refresh the modules on the main page
       add_mod_off(); //The popup menu disappear
-      console.log(data);
     });
   return false;
   }
@@ -85,11 +83,9 @@ $(document).ready(function(){
       $("#modify_module_name").val('');
       $("#modify_module_description").val('');
       $("#modify_module_command").val('');
-      $("#modify_module_parameter").val('');
-      $("#modify_module_select_color").val('');
+      $("#modify_module_select_color").val('#FFFFFF');
       get_module(); //Refresh the modules on the main page
       modify_mod_off(); //The popup menu disappear
-      console.log(data);
     });
   return false;
   }
@@ -97,8 +93,11 @@ $(document).ready(function(){
 
 //Simply delete a module from the database, then refresh the modules on the main page
   function delete_module(id){
-    $.post('delete_module.php',{id:id},function(){
-      get_module();
+    $.post('delete_module.php',{id:id},function(id){
+      $("#"+id).parent().animate({opacity : '0'});
+      setTimeout(function(){
+        get_module();
+      }, 500)
     });
   }
 
@@ -107,7 +106,6 @@ $(document).ready(function(){
 //all old values from the database
   function modify_mod_on(id){
     $.post('get_module_to_modify.php',{id:id}, function(data){
-      console.log(data);
       let module_content = JSON.parse(data);
       $("#modify_module_name").val(module_content[1]);
       $("#modify_module_description").val(module_content[2]);
@@ -129,7 +127,7 @@ $(document).ready(function(){
     $("#modify_module_menu").animate({opacity : '0'});
     setTimeout(function(){
       $("#modify_module_menu").css({"display" : 'none'});
-    }, 1000);
+    }, 500);
   }
 
 
@@ -138,7 +136,7 @@ $(document).ready(function(){
     $("#add_module_menu").animate({opacity : '0'});
     setTimeout(function(){
       $("#add_module_menu").css({"display" : 'none'});
-    }, 1000)
+    }, 500)
   }
 
 
@@ -154,7 +152,7 @@ $(document).ready(function(){
     $("#settings_menu").animate({opacity : '0'});
     setTimeout(function(){
       $("#settings_menu").css({"display" : 'none'});
-    }, 1000)
+    }, 500)
   }
 
 //See above
@@ -162,6 +160,7 @@ $(document).ready(function(){
     $("#settings_menu").css({"display" : 'flex'});
     $("#settings_menu").animate({opacity : '1'});
   }
+
 
 
 //===============================================
