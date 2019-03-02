@@ -195,6 +195,7 @@
       </div>
     </div>
     <div id="loader">
+      <div id="loader_info">WARNING : This website needs JavaScript to work, so if you get stuck on this page please check if your browser supports JavaScript.</div>
       <div id="wheel">
     </div>
   </body>

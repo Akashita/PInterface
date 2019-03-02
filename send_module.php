@@ -1,30 +1,22 @@
 <?php
 
-$arg_list = array("name", "description", "command", "parameter", "color");
-$module = array();
-$file_content = array();
-foreach ($arg_list as $arg) {
-  if (isset($_POST[$arg])){
-    $module[] = $_POST[$arg];
-  }
-  else{
-    $module[] = "undefined";
+$database = new SQLite3("data/db.sqlite");
+$database->exec("CREATE TABLE IF NOT EXISTS modules (id INTEGER PRIMARY KEY, name varchar(255), description varchar(255), command varchar(255), parameter boolean, color character)");
+
+function verify_post($arg){
+  if(isset($_POST[$arg])){
+    return $_POST[$arg];
+  } else{
+    return "undefined";
   }
 }
 
-$file_id = fopen('data/modules.csv', 'r+');
-$id = 0;
-while(!feof($file_id)) {
-  fgetcsv($file_id); //Changement de ligne
-  $id++;
-}
+$name = verify_post('name');
+$desc = verify_post('description');
+$command = verify_post('command');
+$parameter = verify_post('parameter');
+$color = verify_post('color');
 
-fclose($file_id);
+$database->exec("INSERT INTO modules (name, description, command, parameter, color) VALUES ('$name', '$desc', '$command', '$parameter', '$color')");
 
-
-$file = fopen('data/modules.csv', 'a+');
-array_unshift($module,$id);
-fputcsv($file, $module);
-fclose($file);
-//echo() si on veut renvoyer une erreur
  ?>

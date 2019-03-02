@@ -582,13 +582,29 @@ input[type="checkbox"].switch{
 	left: calc(100% - var(--input_height));
   }
 
+#loader_info{
+  animation-delay: 2s;
+  animation-name: loaderinfo;
+  animation-duration: 0.5s;
+  color: rgba(0,0,0,0);
+  -webkit-animation-fill-mode: forwards;
+  font-size: 1.3em;
+  margin: 100px;
+}
+
+@keyframes loaderinfo {
+  from {
+    color: rgba(0, 0, 0, 0);
+  }
+
+  to {
+    color: rgba(200,200,200,1);
+  }
+}
+
   #loader {
   z-index           : 300;
   display           : flex;
-  display           : -ms-flexbox;
-  display           : -webkit-box;
-  -webkit-box-align : center;
-  -webkit-box-pack  : center;
   position          : fixed;
   top               : 0;
   right             : 0;
@@ -596,10 +612,9 @@ input[type="checkbox"].switch{
   height            : 100vh;
   background-color  : rgb(40,40,40);
   align-items       : center;
-  -ms-flex-align    : center;
-  -ms-flex-pack     : center;
   justify-content   : center;
-  opacity: 1;
+  flex-direction    : column;
+  opacity           : 1;
 }
 
 #wheel {

@@ -10,7 +10,6 @@ $(document).ready(function(){
   setTimeout(function(){
     $("#loader").css({"display" : 'none'});
   }, 500);
-
   get_module(); //Add all modules to the main page (+ the add_mod button)
 
 
@@ -68,6 +67,7 @@ $(document).ready(function(){
       $("#add_module_select_color").val('');
       get_module(); //Refresh the modules on the main page
       add_mod_off(); //The popup menu disappear
+      console.log(data);
     });
   return false;
   }
@@ -106,6 +106,7 @@ $(document).ready(function(){
 //all old values from the database
   function modify_mod_on(id){
     $.post('get_module_to_modify.php',{id:id}, function(data){
+      console.log(data);
       let module_content = JSON.parse(data);
       $("#modify_module_name").val(module_content[1]);
       $("#modify_module_description").val(module_content[2]);

@@ -1,27 +1,17 @@
 <?php
-$id = $_POST["id"];
-$file_content = array();
-$new_file_content = array();
 
-$file = fopen('data/modules.csv', 'r+');
-  while(!feof($file)){
-    $file_content[] = fgetcsv($file);
+$database = new SQLite3("data/db.sqlite");
+
+function verify_post($arg){
+  if(isset($_POST[$arg])){
+    return $_POST[$arg];
+  } else{
+    return "undefined";
   }
-  array_pop($file_content); //On enlève le dernier individus (un bool)
-  foreach ($file_content as $module) {
-    if($module[0] != $id){
-      $new_file_content[] = $module;
-    }
-  }
-fclose($file);
+}
 
-$new_file = fopen('data/modules_tmp.csv', 'x');
-  foreach ($new_file_content as $new_content) {
-    fputcsv($new_file, $new_content);
-  }
-fclose($new_file);
+$id = verify_post("id");
 
-unlink('data/modules.csv');
+$database->exec("DELETE FROM modules WHERE id=$id");
 
-rename('data/modules_tmp.csv', 'data/modules.csv');
 ?>

@@ -1,15 +1,10 @@
 <?php
-  $file = fopen('data/modules.csv', 'r');
-  $file_content = array();
-
-  while(! feof($file)){
-    $file_content[] = fgetcsv($file);
-  }
-  fclose($file);
-    foreach ($file_content as $module) {
-      if(!empty($module)){
+  $database = new SQLite3("data/db.sqlite");
+  $database->exec("CREATE TABLE IF NOT EXISTS modules (id INTEGER PRIMARY KEY, name varchar(255), description varchar(255), command varchar(255), parameter boolean, color character)");
+  $result = $database->query('SELECT * FROM modules');
+  while ($row = $result->fetchArray()){ //Tant qu'il reste des lignes
 ?>
-   <div class="module" id="<?php echo($module[0]); ?>">
+   <div class="module" id="<?php echo($row['id']); ?>">
      <div class="more_button">
        <div class="action_popup">
          <div class="actions">
@@ -27,17 +22,17 @@
      </div>
      <div class="black_blur"></div>
      <div class="module_title">
-<?php echo($module[1]); ?>
+<?php echo($row['name']); ?>
      </div>
      <div class="module_description">
-<?php echo($module[2]); ?>
+<?php echo($row['description']); ?>
      </div>
      <ul>
        <li>
          <input type="button" name="Execute" value="Execute" />
        </li>
 <?php
-if($module[4] == "true"){ ?>
+if($row['parameter']){ ?>
        <li>
          <input type="text" placeholder="Parameter" />
        </li>
@@ -45,6 +40,6 @@ if($module[4] == "true"){ ?>
      </ul>
    </div>
 
-<?php }} ?>
+<?php } ?>
 
 <div id="button_add_module"></div>

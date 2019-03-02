@@ -1,21 +1,10 @@
 <?php
 $id = $_POST['id'];
 
+$database = new SQLite3("data/db.sqlite");
+$result = $database->query("SELECT * FROM modules WHERE id=$id");
+$row = $result->fetchArray();
+$json_tab = [$row['id'], $row['name'], $row['description'], $row['command'], $row['parameter'], $row['color']];
 
-
-$file = fopen('data/modules.csv', 'r+');
-
-  while(!feof($file)){
-    $file_content[] = fgetcsv($file);
-  }
-  array_pop($file_content); //On enlève le dernier individus (un bool)
-  foreach ($file_content as $module) {
-    if($module[0] == $id){
-      $module_content = $module;
-    }
-  }
-
-fclose($file);
-
-echo(json_encode($module_content));
+echo(json_encode($json_tab));
  ?>
