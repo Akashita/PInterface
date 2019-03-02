@@ -89,6 +89,7 @@ $(document).ready(function(){
       $("#modify_module_select_color").val('');
       get_module(); //Refresh the modules on the main page
       modify_mod_off(); //The popup menu disappear
+      console.log(data);
     });
   return false;
   }

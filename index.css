@@ -21,6 +21,8 @@ body{
  --footer_height: 200px;
 }
 
+
+
 /*###################################################*/
 /*    MAIN PAGE   ###################################*/
 /*###################################################*/
@@ -39,17 +41,21 @@ main{
 }
 
 .module{
-  background-color: white;
-  border-radius: 20px;
-  border-bottom: 4px solid rgba(0,0,0,0.2);
-  border-left: 5px solid rgba(0,0,0,0.2);
+  background-color: rgba(255,255,255,0.3);
   padding: 10px;
-  margin: 20px 20px 20px 20px;
   display: flex;
   align-items: center;
   justify-content: center;
   flex-direction: column;
   position: relative;
+}
+
+.color_container{
+  margin: 20px;
+  border-radius: 20px;
+  border-bottom: 4px solid rgba(120,120,120,0.4);
+  border-left: 5px solid rgba(120,120,120,0.4);
+  overflow: hidden;
 }
 
 .more_button{
@@ -192,9 +198,14 @@ main{
   align-items: center;
   justify-content: flex-start;
   padding: 10px 20px 10px 20px;
+  margin: 0 30px 0 30px;
   border-radius: 100px;
   background-color: rgba(0,0,0,0.1);
   height: var(--input_height);
+}
+
+.module_parameter{
+  padding: 10px;
 }
 
 .module_description{
@@ -411,6 +422,16 @@ nav{
   height: var(--input_height);
 }
 
+.pop_module_description{
+  padding: 10px;
+}
+
+.pop_module_name{
+  padding: 10px;
+}
+
+
+
 .pop_module_select_color{
   border: none;
   border-radius: 100px;
@@ -450,14 +471,15 @@ nav{
 }
 
 .pop_module_command{
-  padding-left: 40px;
+  padding: 10px 10px 10px 35px;
   background-image: url(img/arrow.png);
   background-repeat: no-repeat;
   background-position: 10px;
   background-size: 20px;
-  width: calc(var(--input_width) - 30px);
+  width: calc(var(--input_width) - 35px);
   transition: 1s all ease-out;
 }
+
 
 .pop_module_command:focus{
   transition: 0.5s all ease-out;
@@ -514,6 +536,10 @@ footer{
 /*INPUT    ##########################################*/
 /*###################################################*/
 
+input{
+  color: black;
+}
+
 input[type=submit]{
   display: inline-block;
   border: none;
@@ -521,8 +547,6 @@ input[type=submit]{
 
 input[type="text"]{
   height: var(--input_height);
-  width: var(--input_width);
-  padding: 10px;
   border-radius: 500px;
   background-color: rgba(0,0,0,0.1);
   border: none;
@@ -667,4 +691,20 @@ input[type="checkbox"].switch{
     -webkit-transform : rotate(360deg);
     transform         : rotate(360deg);
   }
+}
+
+@media only screen and (max-width: 980px) {
+ #footer_content {
+   flex-direction: column;
+ }
+ footer{
+   height: auto;
+   padding: 20px 0 20px 0;
+ }
+ .vertical_line{
+   width: 100px;
+   height: 0px;
+   border-bottom: 2px solid rgb(130,130,130);
+   margin: 30px 0 30px 0;
+ }
 }

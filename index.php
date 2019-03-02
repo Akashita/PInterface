@@ -2,7 +2,7 @@
 <html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8">
-    <title></title>
+    <title>PInterface</title>
     <link rel="stylesheet" href="index.css">
     <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
@@ -11,7 +11,7 @@
   <body>
 
 <!-- Main page -->
-    <div id="main_page"> <!-- Ajouter ici tout le contenu de la page, désactiver le blur par défaut -->
+    <div id="main_page">
       <nav>
         <div id="nav_buttons">
           <img src="img/logo.png" alt="logo" id="nav_logo"/>
@@ -69,30 +69,26 @@
       </main>
       <footer>
         <div id="footer_content">
-            <ul>
-              <li>
-                Github : www.github.io.....
-              </li>
-              <li>
-                Documentation : www.github.io.....
-              </li>
-              <li>
-                Licence : http://www.gnu.org/licenses/gpl-3.0.html
-              </li>
-            </ul>
-          <div class="vertical_line"></div>
-            <ul>
-              <li>
-                By Swan Launay
-              </li>
-              <li>
-                akashita@protonmail.com
-              </li>
-            </ul>
-          <div class="vertical_line"></div>
           <ul>
             <li>
-              In collaboration with Gaby Launay
+              Github : www.github.io.....
+            </li>
+            <li>
+              Documentation : www.github.io.....
+            </li>
+            <li>
+              Licence : http://www.gnu.org/licenses/gpl-3.0.html
+            </li>
+          </ul>
+        <div class="vertical_line"></div>
+          <ul>
+            <li>
+              Created by Swan and Gaby Launay
+            <li>
+              akashita@protonmail.com
+            </li>
+            <li>
+              gaby...@mail.com
             </li>
           </ul>
         </div>
@@ -130,7 +126,7 @@
                 Choose the module color
               </div>
               <div id="add_module_select_color_container" class="pop_module_select_color_container">
-                <input type="color" id="add_module_select_color" class="pop_module_select_color"/>
+                <input type="color" id="add_module_select_color" class="pop_module_select_color" value="#FFFFFF"/>
               </div>
             </li>
           </ul>
@@ -172,7 +168,7 @@
                     Choose the module color
                   </div>
                   <div id="modify_module_select_color_container" class="pop_module_select_color_container">
-                    <input type="color" id="modify_module_select_color" class="pop_module_select_color"/>
+                    <input type="color" id="modify_module_select_color" class="pop_module_select_color" value="#FFFFFF"/>
                   </div>
                 </li>
               </ul>
