@@ -6,9 +6,9 @@ $(document).ready(function(){
   // Events (Start)
   //===============================================
 
-  $("#loader").animate({opacity : '0'});
+  $("#loader_container").animate({opacity : '0'});
   setTimeout(function(){
-    $("#loader").css({"display" : 'none'});
+    $("#loader_container").css({"display" : 'none'});
   }, 500);
   get_module(); //Add all modules to the main page (+ the add_mod button)
 
@@ -39,6 +39,9 @@ $(document).ready(function(){
   $("#goto_settings_buttons").click(settings_on);
   $("#close_settings_window").click(settings_off);
 
+//Close error POPUP
+  $("#close_error").click(error_off);
+
 //===============================================
 // Events (End)
 // Functions (Start)
@@ -60,6 +63,7 @@ $(document).ready(function(){
     let parameter = $("#add_module_parameter").is(":checked");
     let color = $("#add_module_select_color").val();
     $.post('send_module.php',{name:name, description:description, command:command, parameter:parameter, color:color}, function(data){
+      error_on(data);
       $("#add_module_name").val('');
       $("#add_module_description").val('');
       $("#add_module_command").val('');
@@ -80,6 +84,7 @@ $(document).ready(function(){
     let color = $("#modify_module_select_color").val();
     id = ident.data.id;
     $.post('modify_module.php',{id:id, name:name, description:description, command:command, parameter:parameter, color:color}, function(data){
+      error_on(data);
       $("#modify_module_name").val('');
       $("#modify_module_description").val('');
       $("#modify_module_command").val('');
@@ -106,6 +111,7 @@ $(document).ready(function(){
 //all old values from the database
   function modify_mod_on(id){
     $.post('get_module_to_modify.php',{id:id}, function(data){
+      //error(data); Error to add
       let module_content = JSON.parse(data);
       $("#modify_module_name").val(module_content[1]);
       $("#modify_module_description").val(module_content[2]);
@@ -159,6 +165,22 @@ $(document).ready(function(){
   function settings_on(){
     $("#settings_menu").css({"display" : 'flex'});
     $("#settings_menu").animate({opacity : '1'});
+  }
+
+  function error_on(data){
+    if(data){
+      $("#error_container").animate({top : '5px'});
+      $("#error_container").css({"display" : 'flex'});
+      $("#error").text(data);
+    }
+  }
+
+  function error_off(data){
+    $("#error_container").animate({top : '-200px'});
+    setTimeout(function(){
+      $("#error_container").css({"display" : 'none'});
+    }, 500)
+    $("#error").text();
   }
 
 

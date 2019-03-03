@@ -149,9 +149,20 @@
       </ul>
     </div>
   </div>
-  <div id="loader">
-    <div id="loader_info">WARNING : This website needs JavaScript to work, so if you get stuck on this page please check if your browser supports JavaScript.</div>
-    <div id="wheel">
+  <div id="error_container">
+    <div id="error">Salut</div>
+    <div id="close_error">
+      X
+    </div>
+  </div>
+  <div id="loader_container">
+    <div id="loader_info">
+      WARNING : This website needs JavaScript to work, so if you get stuck on this page please check if your browser supports JavaScript.
+    </div>
+    <div class="spinner">
+      <div class="double-bounce1"></div>
+      <div class="double-bounce2"></div>
+    </div>
   </div>
 </body>
 </html>
