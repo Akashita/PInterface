@@ -17,8 +17,6 @@ if (isset($_POST['id'])){
   $command = verify_post('command');
   $parameter = verify_post('parameter');
   $color = verify_post('color');
-
-
   $database->exec("UPDATE modules SET name='$name', description='$desc', command='$command', parameter='$parameter', color='$color' WHERE id=$id");
 
 }

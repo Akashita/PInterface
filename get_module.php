@@ -33,7 +33,7 @@
            <input type="button" name="Execute" value="Execute" />
          </li>
   <?php
-  if($row['parameter']){ ?>
+  if($row['parameter'] == "true"){ ?>
          <li>
            <input type="text" placeholder="Parameter" class="module_parameter" />
          </li>

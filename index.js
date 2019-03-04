@@ -25,8 +25,10 @@ $(document).ready(function(){
     let id = $(this).closest('.module').attr('id');
     modify_mod_on(id);
     $("#modify_module_window").click(modify_mod_off);
-    $("#modify_module_submit").on('click', {id:id}, modify_module);
-  });
+    $("#modify_module_submit").off().on('click', {id:id}, modify_module);
+  }); //The .off () is essential, it destroys event.data and recreates it,
+  //it allows not to have several id in the object
+
 
 
 //Delete a module
@@ -82,7 +84,8 @@ $(document).ready(function(){
     let command = $("#modify_module_command").val();
     let parameter = $("#modify_module_parameter").is(":checked");
     let color = $("#modify_module_select_color").val();
-    id = ident.data.id;
+    let id = ident.data.id;
+    console.log(id);
     $.post('modify_module.php',{id:id, name:name, description:description, command:command, parameter:parameter, color:color}, function(data){
       error_on(data);
       $("#modify_module_name").val('');
@@ -171,7 +174,7 @@ $(document).ready(function(){
     if(data){
       $("#error_container").animate({top : '5px'});
       $("#error_container").css({"display" : 'flex'});
-      $("#error").text(data);
+      $("#error").html(data);
     }
   }
 
