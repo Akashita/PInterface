@@ -7,7 +7,7 @@
   <link rel="stylesheet" href="style/main.css">
   <link rel="stylesheet" href="style/footer.css">
   <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
-  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
+  <script src="jquery/jquery-3.3.1.min.js"></script>
   <script src="index.js"></script>
 </head>
 <body>
